@@ -7,7 +7,7 @@
 import random, os
 from arts import logo
 
-def easy_game(number): 
+def easy_game(number):
     """easy game mode, enables 10 attempts to guess the right random number"""
     attempts = 10 # number of attempts of easy game mode
     while True: # infinite loop
@@ -24,7 +24,7 @@ def easy_game(number):
             os.system("clear") # clearing the console, for ui purpose
             print("Too low.\nGuess again.") # letting player know that the guess is lower than the random number.
             attempts -= 1 # decreasing attempts by 1
-            
+
         elif user_guess == number: # if player guessed the right random number
             print(f"You get it, It's {user_guess}\nYou win!") # he wins
             break # exit the loop
@@ -41,32 +41,41 @@ def hard_game(number):
         if user_guess > number: # if player's guess is greater than the random number
             os.system("clear") # clearing the console, for ui purpose
             print("Too high.\nGuess again.") # letting player know that the guess is greater than the random number.
-            attempts -= 1 # decreasing attempts by 1 
+            attempts -= 1 # decreasing attempts by 1
         elif user_guess < number: # if player's guess is lower than the random number
             os.system("clear") # clearing the console, for ui purpose
             print("Too low.\nGuess again.")  # letting player know that the guess is lower than the random number.
             attempts -= 1 # decreasing attempts by 1
-            
+
         elif user_guess == number: # if player guessed the right random number
+            os.system("clear")
             print(f"You get it, It's {user_guess}\nYou win!") # he wins
             break # exit the loop
-        
+
 
 if __name__ == "__main__": # execute any rest of code starting after this check
     print(f"{logo}\n")
     print("Welcome to the number guessing game.") # welcome to game
     print("Think of a number between 1 and 100.") # game idea
     number = random.randint(1,100) # getting a random number that a player should guess
+    while True:
+        user_choice = input("Play? (y / n)\n> ")
+        if user_choice == "y":
 
-    while True: # infinit loop
-        level_choice = str(input("Choose a difficulty level, Type 'easy' or 'hard'> ")) # player should choose whether he wants the game easy or hard
-        os.system("clear") # clearing the console, for ui purpose
-        if level_choice == "easy": # if player's choice is easy
-            easy_game(number) # call the easy_game function above with passing the random number to it
-            break # exit the loop (exit the game)
-        elif level_choice == "hard": # if player's choice is hard
-            hard_game(number) # call the hard_game function above with passing the random number to it
-            break # exit the loop (exit the game)
-        else: # if player's choice is not easy or hard
-            print("Wrong Entry!\=================================================") # display a 'Wrong Entry!' message to him
-            continue # reload the loop
+            while True: # infinit loop
+                level_choice = str(input("Choose a difficulty level, Type 'easy' or 'hard'> ")) # player should choose whether he wants the game easy or hard
+                os.system("clear") # clearing the console, for ui purpose
+                if level_choice == "easy": # if player's choice is easy
+                    easy_game(number) # call the easy_game function above with passing the random number to it
+                    break # exit the loop (exit the game)
+                elif level_choice == "hard": # if player's choice is hard
+                    hard_game(number) # call the hard_game function above with passing the random number to it
+                    break # exit the loop (exit the game)
+                else: # if player's choice is not easy or hard
+                    print("Wrong Entry!\=================================================") # display a 'Wrong Entry!' message to him
+                    continue # reload the loop
+        elif user_choice == "n":
+            break
+
+        else:
+            print("Wrong Entry!")
