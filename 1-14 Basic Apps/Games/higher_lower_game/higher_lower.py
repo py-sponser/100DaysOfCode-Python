@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
         if random_data1["name"] == random_data2["name"] or random_data1["follower_count"] == random_data2["follower_count"]: # checking if in both data, names are identical or number of follower are identical, if yes, loop will continue
             continue
-
+        
         print(f"Compare!\n\n") # printing a text
         if random_data2 != last_a: # if 'b' is not last_a, means that 'b' hadn't the highest number of followers
             if win: # if first win occurred

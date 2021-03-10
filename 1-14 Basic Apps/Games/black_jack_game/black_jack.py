@@ -67,6 +67,7 @@ def play(user_cards,computer_cards,user_win):
         elif user_add_choice == "n": # if user denies adding new cards, and everytime he'll deny, because he actually monitor his list, knows that he can't add more or he loses, and wait for result against computer.
             if computer_add_choice == "y": # it's computer's turn, checking if yes.
                 computer_cards.append(random_value) # add new card to computer's cards
+                print("Computer has added a new card.")
                 final_message = f"[+] Your final hand> {user_cards}\n[+] Computer's final hand> {computer_cards}" # same final message
                 if sum(computer_cards) > highest_value: # if sum of computer's card < highest_value, computer loses
                     print(final_message)
@@ -79,6 +80,7 @@ def play(user_cards,computer_cards,user_win):
                 else:
                     continue
             elif computer_add_choice == "n": # if the computer's random choice is 'n', so it continues the loop, the user will deny accepting to add new cards.
+                print("Computer hasn't added a new card.")
                 continue
         else: # validation purpose.
             print("Wrong Entry!\n==============================================")

@@ -65,7 +65,7 @@ word, word_length = refresh(word,word_length) # calling refresh function which i
 # and it's also responsible for giving random values for the word and word length
 
 user_word = list() # defining a list for user's word
-user_word = reset_user_word(user_word) # reseting user word (calling the function), will be explained
+user_word = reset_user_word(user_word,word_length) # reseting user word (calling the function), will be explained
 
 lives = int() # defining an integar for number of lives which when expire by guessing the wrong letters of the word n times, user loses
 lives = reset_lives(lives) # resetting lives by calling its function

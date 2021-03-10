@@ -13,7 +13,7 @@ def easy_game(number):
     while True: # infinite loop
         print(f"You have {attempts} remaining to guess the number.")  # displaying how many attempts left for the player
         if attempts == 0: # if no attempts left
-            print("Attempts expired, You lose!") # message to the user
+            print(f"Attempts expired, You lose!\nThe number is {number}") # message to the user
             break # exit the loop
         user_guess = int(input("Guess a number> ")) # in case attempts left, take a guess from the player
         if user_guess > number: # if player's guess is greater than the random number
@@ -35,7 +35,7 @@ def hard_game(number):
     while True: # infinit loop
         print(f"You have {attempts} remaining to guess the number.") # displaying how many attempts left for the player
         if attempts == 0: # if no attempts left
-            print("Attempts expired, You lose!") # player lose
+            print(f"Attempts expired, You lose!\nThe number is {number}") # player lose
             break # exit the loop
         user_guess = int(input("Guess a number> ")) # if attempts left, take a guess from the player
         if user_guess > number: # if player's guess is greater than the random number
